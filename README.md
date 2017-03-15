@@ -13,7 +13,7 @@ $ npm install pown-modules --save
 Once that's done, you can list all installed pown modules like this:
 
 ```js
-const pownModules = require('pown-modules)
+const pownModules = require('pown-modules')
 
 pownModules.list((err, modules) => {
     if (err) {
@@ -36,9 +36,9 @@ A pown module is a regular NPM module which exports pown features and options vi
 
 ```json
 {
-    pown: {
-        tools: {
-            mytool: './mytool.js'
+    "pown": {
+        "tools": {
+            "mytool": "./mytool.js"
         }
     }
 }
@@ -48,8 +48,8 @@ A pown module is a regular NPM module which exports pown features and options vi
 
 ```json
 {
-    tools: {
-        mytool: './mytool.js'
+    "tools": {
+        "mytool": "./mytool.js"
     }
 }
 ```
