@@ -47,10 +47,12 @@ const filterPownModules = (modules, done) => {
     }, done)
 }
 
+const defaultRoot = path.dirname(require.main.filename)
+
 exports.list = memoize((root, done) => {
     if (typeof(root) === 'function') {
         done = root
-        root = path.dirname(require.main.filename)
+        root = defaultRoot
     }
 
     const tasks = [
@@ -62,4 +64,4 @@ exports.list = memoize((root, done) => {
     ]
 
     waterfall(tasks, done)
-}, root => root)
+}, root => typeof(root) === 'function' ? defaultRoot : root)
