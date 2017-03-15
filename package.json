@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/pownjs/pown-modules/issues"
   },
-  "homepage": "https://github.com/pownjs/pown-modules#readme"
+  "homepage": "https://github.com/pownjs/pown-modules#readme",
+  "dependencies": {
+    "read-package-tree": "^5.1.5"
+  }
 }
