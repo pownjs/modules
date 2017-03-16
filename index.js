@@ -23,7 +23,9 @@ const flattenModuleTree = (tree, done) => {
 
 const loadModuleConfigs = (modules, done) => {
     map(modules, (module, done) => {
-        if (!module.config) {
+        if (module.config) {
+            done(null, module)
+        } else {
             fs.readFile(path.join(module.realpath, '.pownrc'), (err, data) => {
                 if (!err) {
                     try {
@@ -34,10 +36,10 @@ const loadModuleConfigs = (modules, done) => {
                         return
                     }
                 }
+
+                done(null, module)
             })
         }
-
-        done(null, module)
     }, done)
 }
 
