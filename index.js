@@ -49,7 +49,22 @@ const filterPownModules = (modules, done) => {
 
 const defaultRoot = path.dirname(require.main.filename)
 
-exports.list = memoize((root, done) => {
+exports.listNodeModules = memoize((root, done) => {
+    if (typeof(root) === 'function') {
+        done = root
+        root = defaultRoot
+    }
+
+    const tasks = [
+        constant(root, _ => true),
+        readPackageTree,
+        flattenModuleTree
+    ]
+
+    waterfall(tasks, done)
+}, root => typeof(root) === 'function' ? defaultRoot : root)
+
+exports.listPownModules = memoize((root, done) => {
     if (typeof(root) === 'function') {
         done = root
         root = defaultRoot
@@ -65,3 +80,5 @@ exports.list = memoize((root, done) => {
 
     waterfall(tasks, done)
 }, root => typeof(root) === 'function' ? defaultRoot : root)
+
+exports.list = exports.listPownModules
