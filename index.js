@@ -47,7 +47,7 @@ const filterPownModules = (modules, done) => {
     }, done)
 }
 
-const defaultRoot = path.dirname(require.main.filename)
+const defaultRoot = process.env.POWN_ROOT || path.dirname(require.main.filename)
 
 exports.listNodeModules = memoize((root, done) => {
     if (typeof(root) === 'function') {
