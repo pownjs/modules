@@ -23,21 +23,21 @@ const flattenModuleTree = (tree, done) => {
 
 const loadModuleConfigs = (modules, done) => {
     map(modules, (module, done) => {
-        if (module.config) {
-            done(null, module)
-        } else {
+        if (!module.config) {
             fs.readFile(path.join(module.realpath, '.pownrc'), (err, data) => {
-                if (err) {
-                    done(null, module)
-                } else {
+                if (!err) {
                     try {
                         module.config = JSON.parse(data.toString())
                     } catch (err) {
                         done(err)
+
+                        return
                     }
                 }
             })
         }
+
+        done(null, module)
     }, done)
 }
 
