@@ -37,11 +37,14 @@ A pown module is a regular NPM module which exports pown features and options vi
 ```json
 {
     "pown": {
+        "main": "./main.js",
+        "command": "./mytool.js",
         "commands": [
-            "./mytool.js"
+            "./mytool2.js"
         ],
+        "plugin": "./myplugin.js",
         "plugins": [
-            "./myplugin.js"
+            "./myplugin2.js"
         ]
     }
 }
@@ -51,11 +54,14 @@ A pown module is a regular NPM module which exports pown features and options vi
 
 ```json
 {
+    "main": "./main.js",
+    "command": "./mytool.js",
     "commands": [
-        "./mytool.js"
+        "./mytool2.js"
     ],
+    "plugin": "./myplugin.js",
     "plugins": [
-        "./myplugin.js"
+        "./myplugin2.js"
     ]
 }
 ```
