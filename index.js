@@ -7,18 +7,26 @@ const constant = require('async/constant')
 const waterfall = require('async/waterfall')
 const readPackageTree = require('read-package-tree')
 
+const maxLevel = process.env.POWN_MODULES_MAX_LEVEL || Infinity
+
 const flattenModuleTree = (tree, done) => {
-    function* unravel(node) {
+    function* unravel(node, level) {
+        if (level > maxLevel) {
+            return
+        } else {
+            level = level + 1
+        }
+
         yield {config: node.package.pown, package: node.package, realpath: node.realpath}
 
-        for (let i = 0; i < node.children.length; i++) {
-            yield* unravel(node.children[i])
+        if (level <= maxLevel) {
+            for (let i = 0; i < node.children.length; i++) {
+                yield* unravel(node.children[i], level)
+            }
         }
     }
 
-    map(unravel(tree), (module, done) => {
-        done(null, module)
-    }, done)
+    done(null, Array.from(unravel(tree, 0)))
 }
 
 const loadModuleConfigs = (modules, done) => {
