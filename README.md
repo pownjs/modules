@@ -30,6 +30,18 @@ pownModules.list((err, modules) => {
 })
 ```
 
+You can also use promises with async/await like this:
+
+```js
+const pownModules = require('@pown/modules')
+
+const modules = await pownModules.list()
+
+modules.forEach((module) => {
+    // do something with module.config, module.package or module.realpath
+})
+```
+
 ## Pown Modules
 
 A pown module is a regular NPM module which exports pown features and options via package.json or .pownrc.
