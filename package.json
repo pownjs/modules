@@ -1,12 +1,11 @@
 {
-  "name": "pown-modules",
-  "version": "0.4.4",
+  "name": "@pown/modules",
+  "version": "0.5.0",
   "description": "Pownage guaranteed",
-  "main": "index.js",
-  "bin": {
-    "pown": "./index.js"
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "true"
   },
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pownjs/pown-modules.git"
@@ -23,7 +22,7 @@
   },
   "homepage": "https://github.com/pownjs/pown-modules#readme",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.1",
     "read-package-tree": "^5.2.1"
   }
 }

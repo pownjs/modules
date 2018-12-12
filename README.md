@@ -1,19 +1,21 @@
-# pown-modules  [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/pownjs/Lobby)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/pownjs.svg?logo=twitter)](https://twitter.com/pownjs)
 
-> Utility library for working with Pown.js modules.
+# Pown Modules
+
+Utility library for working with Pown.js modules.
 
 ## Quickstart
 
-From the same directory as your project's package.json, install this module with the following command:
+Install this module from the root of your project:
 
 ```sh
-$ npm install pown-modules --save
+$ npm install @pown/modules --save
 ```
 
-Once that's done, you can list all installed pown modules like this:
+Once done, list all installed pown modules like this:
 
 ```js
-const pownModules = require('pown-modules')
+const pownModules = require('@pown/modules')
 
 pownModules.list((err, modules) => {
     if (err) {
