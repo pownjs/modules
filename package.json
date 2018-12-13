@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/pownjs/pown-modules#readme",
   "dependencies": {
-    "async": "^2.6.1",
     "read-package-tree": "^5.2.1"
   }
 }
