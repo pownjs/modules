@@ -58,9 +58,9 @@ A pown module is a regular NPM module which exports pown features and options vi
         "commands": [
             "./mytool2.js"
         ],
-        "plugin": "./myplugin.js",
-        "plugins": [
-            "./myplugin2.js"
+        "transform": "./mytransform.js",
+        "transforms": [
+            "./mytransform2.js"
         ]
     }
 }
@@ -75,9 +75,9 @@ A pown module is a regular NPM module which exports pown features and options vi
     "commands": [
         "./mytool2.js"
     ],
-    "plugin": "./myplugin.js",
-    "plugins": [
-        "./myplugin2.js"
+    "transform": "./mytransform.js",
+    "transforms": [
+        "./mytransform2.js"
     ]
 }
 ```
