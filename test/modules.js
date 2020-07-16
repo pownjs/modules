@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const { listNodeModules, list, extract, hasNodeModule } = require('../lib/modules')
+const { listNodeModules, list, extract, extractSync, hasNodeModule } = require('../lib/modules')
 
 describe('lib', () => {
     describe('#listNodeModules', () => {
@@ -39,7 +39,7 @@ describe('lib', () => {
 
     describe('#extract', () => {
         it('must extract list of pown modules', (done) => {
-            extract((err,  { loadableModules, loadableCommands }) => {
+            extract((err, { loadableModules, loadableCommands }) => {
                 assert.deepEqual(loadableModules, {})
                 assert.deepEqual(loadableCommands, [])
 
@@ -49,9 +49,20 @@ describe('lib', () => {
 
         it('must extract list of pown modules (async/await)', async() => {
             const { loadableModules, loadableCommands } = await extract()
-            
+
             assert.deepEqual(loadableModules, {})
             assert.deepEqual(loadableCommands, [])
+        })
+    })
+
+    describe('#extractSync', () => {
+        it('must extract list of pown modules', (done) => {
+            const { loadableModules, loadableCommands } = extractSync()
+
+            assert.deepEqual(loadableModules, {})
+            assert.deepEqual(loadableCommands, [])
+
+            done()
         })
     })
 
