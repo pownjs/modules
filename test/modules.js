@@ -39,28 +39,31 @@ describe('lib', () => {
 
     describe('#extract', () => {
         it('must extract list of pown modules', (done) => {
-            extract((err, { loadableModules, loadableCommands }) => {
+            extract((err, { loadableModules, loadableCommands, loadableTransforms }) => {
                 assert.deepEqual(loadableModules, {})
                 assert.deepEqual(loadableCommands, [])
+                assert.deepEqual(loadableTransforms, [])
 
                 done()
             })
         })
 
         it('must extract list of pown modules (async/await)', async() => {
-            const { loadableModules, loadableCommands } = await extract()
+            const { loadableModules, loadableCommands, loadableTransforms } = await extract()
 
             assert.deepEqual(loadableModules, {})
             assert.deepEqual(loadableCommands, [])
+            assert.deepEqual(loadableTransforms, [])
         })
     })
 
     describe('#extractSync', () => {
         it('must extract list of pown modules', (done) => {
-            const { loadableModules, loadableCommands } = extractSync()
+            const { loadableModules, loadableCommands, loadableTransforms } = extractSync()
 
             assert.deepEqual(loadableModules, {})
             assert.deepEqual(loadableCommands, [])
+            assert.deepEqual(loadableTransforms, [])
 
             done()
         })
