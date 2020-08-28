@@ -4,13 +4,6 @@ exports.yargs = {
     aliases: ['ls', 'l'],
 
     builder: (yargs) => {
-        yargs.option('optional', {
-            type: 'boolean',
-            describe: 'List optional packages.',
-            alias: ['o'],
-            default: false
-        })
-
         yargs.option('depth', {
             type: 'number',
             describe: 'List depth.',
@@ -20,17 +13,7 @@ exports.yargs = {
     },
 
     handler: async(yargs) => {
-        const { optional = false, depth = 0 } = yargs
-
-        if (optional) {
-            const dist = require('@pown/dist/lib/modules/official.json')
-
-            Object.entries(dist).forEach(([name, { description = '' }]) => {
-                console.log(`${name} - ${description}`)
-            })
-
-            return
-        }
+        const { depth = 0 } = yargs
 
         const util = require('util')
         const { spawn } = require('child_process')

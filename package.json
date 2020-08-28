@@ -28,6 +28,7 @@
     "@pown/cli": "^2.22.0"
   },
   "dependencies": {
+    "@pown/preferences": "^2.3.0",
     "read-package-tree": "^5.2.1"
   },
   "pown": {
