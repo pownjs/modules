@@ -4,7 +4,7 @@
 
 # Pown Modules
 
-Utility library for working with Pown.js modules.
+Utility library for working with Pown.js modules. Pown Modules provides core functionalities for the Pown.js command-line framework.
 
 ## Quickstart
 
