@@ -29,6 +29,6 @@ exports.yargs = {
 
         const dirname = getPreferencesDirectory('modules')
 
-        await spawnAsync('npm', ['install', ...modules, ...(development ? [] : ['--production'])], { stdio: 'inherit', cwd: dirname })
+        await spawnAsync('npm', ['install', ...modules, ...(development ? [] : ['--production'])], { shell: true, stdio: 'inherit', cwd: dirname })
     }
 }
