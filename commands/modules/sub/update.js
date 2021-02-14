@@ -16,6 +16,6 @@ exports.yargs = {
 
         const dirname = getPreferencesDirectory('modules')
 
-        await spawnAsync('npm', ['update', ...modules], { shell: true, stdio: 'inherit', cwd: dirname })
+        await spawnAsync('npm', ['update', '--depth', '9999', ...modules], { shell: true, stdio: 'inherit', cwd: dirname })
     }
 }
