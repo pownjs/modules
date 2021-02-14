@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/pownjs/pown-modules#readme",
   "devDependencies": {
-    "@pown/cli": "^2.23.0"
+    "@pown/cli": "^2.25.3"
   },
   "dependencies": {
     "@pown/preferences": "^2.3.0",
