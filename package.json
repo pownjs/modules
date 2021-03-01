@@ -25,10 +25,10 @@
   },
   "homepage": "https://github.com/pownjs/pown-modules#readme",
   "devDependencies": {
-    "@pown/cli": "^2.25.3"
+    "@pown/cli": "^2.28.0"
   },
   "dependencies": {
-    "@pown/preferences": "^2.3.0",
+    "@pown/preferences": "^2.4.0",
     "read-package-tree": "^5.2.1"
   },
   "pown": {
