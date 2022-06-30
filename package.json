@@ -7,7 +7,7 @@
     "pown": "POWN_ROOT=. pown-cli",
     "usage": "POWN_ROOT=. pown-cli modules --help",
     "build": "true",
-    "test": "mocha"
+    "test": "NODE_ENV=test npx mocha@latest"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/pownjs/pown-modules#readme",
   "devDependencies": {
-    "@pown/cli": "^2.33.0",
-    "@pown/toolchain": "^2.1.0"
+    "@pown/cli": "^2.33.0"
   },
   "dependencies": {
     "@pown/preferences": "^2.5.0",
